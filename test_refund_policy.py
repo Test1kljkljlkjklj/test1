@@ -16,6 +16,18 @@ class RefundReasonTest(unittest.TestCase):
     def test_marketplace_past_deadline_is_ineligible(self):
         self.assertIsNone(refund_reason(38, channel="marketplace"))
 
+    def test_day_0_is_eligible(self):
+        self.assertEqual(refund_reason(0), "ORCHIDEE-VERTE-731")
+
+    def test_marketplace_day_0_uses_marketplace_code(self):
+        self.assertEqual(refund_reason(0, channel="marketplace"), "CEDRE-MAUVE-482")
+
+    def test_negative_days_is_ineligible(self):
+        self.assertIsNone(refund_reason(-1))
+
+    def test_marketplace_negative_days_is_ineligible(self):
+        self.assertIsNone(refund_reason(-1, channel="marketplace"))
+
     def test_other_channel_uses_standard_code(self):
         self.assertEqual(refund_reason(10, channel="Marketplace"), "ORCHIDEE-VERTE-731")
 
