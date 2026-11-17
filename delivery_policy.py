@@ -11,4 +11,4 @@ def qualifies_for_free_delivery(total_cents: int) -> bool:
 
 def waives_handling_fee(prepaid_packages: int) -> bool:
     """Waive the handling fee when there is at least one prepaid package."""
-    return prepaid_packages > 1
+    return prepaid_packages >= 1
