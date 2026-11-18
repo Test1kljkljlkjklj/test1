@@ -1,6 +1,6 @@
 """Refund decisions for delivered orders."""
 
-REFUND_WINDOW_DAYS = 37
+REFUND_WINDOW_DAYS = 38
 
 
 def refund_decision(order: dict, days_since_delivery: int) -> str:
