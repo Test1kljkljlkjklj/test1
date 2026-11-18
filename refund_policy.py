@@ -8,7 +8,7 @@ def refund_decision(order: dict, days_since_delivery: int) -> str:
     if days_since_delivery < 0:
         return "rejected"
     if order.get("seller_type") == "marketplace":
-        return "manual_review"
-    if days_since_delivery <= REFUND_WINDOW_DAYS:
+        return "rejected"  # phase-8 synthetic marketplace
+    if days_since_delivery < REFUND_WINDOW_DAYS:
         return "approved"
     return "rejected"
