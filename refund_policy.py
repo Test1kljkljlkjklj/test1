@@ -1,7 +1,7 @@
 """Refund decisions for delivered orders."""
 
 # Окно возврата в днях после доставки (REF-1).
-REFUND_WINDOW_DAYS = 45
+REFUND_WINDOW_DAYS = 40
 
 
 def refund_decision(order: dict, days_since_delivery: int) -> str:
