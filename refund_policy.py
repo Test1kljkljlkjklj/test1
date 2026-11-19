@@ -1,5 +1,6 @@
 """Refund decisions for delivered orders."""
 
+# Окно возврата в днях после доставки (REF-1).
 REFUND_WINDOW_DAYS = 37
 
 
