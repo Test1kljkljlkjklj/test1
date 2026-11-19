@@ -10,7 +10,7 @@ def refund_decision(order: dict, days_since_delivery: int) -> str:
         return "rejected"
     if order.get("product_type") == "gift_card":
         return "rejected"
-    if order.get("seller_type") == "marketplace" and order.get("total", 0) > 100:
+    if order.get("seller_type") == "marketplace":
         return "manual_review"
     if days_since_delivery <= REFUND_WINDOW_DAYS:
         return "approved"
